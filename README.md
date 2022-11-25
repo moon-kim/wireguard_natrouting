@@ -2,6 +2,6 @@
 
 Add the following to wg0.conf:
 
-PostUp = /etc/wireguard/helper/add-nat-routing.sh
+PostUp = /etc/wireguard/add-nat-routing.sh
 
-PostDown = /etc/wireguard/helper/remove-nat-routing.sh
+PostDown = /etc/wireguard/remove-nat-routing.sh
