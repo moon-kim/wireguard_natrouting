@@ -4,9 +4,10 @@ IPT6="/sbin/ip6tables"
 
 IN_FACE="enp0s3"                   # NIC connected to the internet. command #ip -o -4 route show to default | awk '{print $5}'
 WG_FACE="wg0"                    # WG NIC
-SUB_NET="10.10.1.0/24"          # WG IPv4 sub/net aka CIDR
+SUB_NET="10.10.1.0/24"          # WG IPv4 sub/net aka CIDR # Server interface: 10.10.1.1/24
 WG_PORT="51820"                  # WG udp port
-SUB_NET_6="fd42:42:42::/64"      # WG IPv6 sub/net
+SUB_NET_6="fd42:42:42::/64"      # WG IPv6 sub/net #Server Interface: fd42:0042:0042:0000:0000:0000:0000:0001/64
+
 
 ## IPv4 ##
 $IPT -t nat -I POSTROUTING 1 -s $SUB_NET -o $IN_FACE -j MASQUERADE
